@@ -1,10 +1,7 @@
 function yandexParse() {
-    
-    'use strict';
   
-    var startTime = new Date();
-  
-    const randomNumber = getRandomInt(1000000, 9999999),
+    const startTime = new Date(),
+          randomNumber = getRandomInt(1000000, 9999999),
           reportName = customDateRange('from') + '-' + customDateRange('to') + ' Direct Data';
   
     var data = {
