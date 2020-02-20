@@ -9,7 +9,7 @@ function toTable(tsv, reportName) {
     var end = lines.length - +2;
     for (var i = 2; i < end; i++) {
         var currentline = lines[i].toString().toLowerCase().replace(/--/g, '0').replace(/\+/g, '').split('\t');
-        currentline[1] = currentline[1].replace(/\W/g, ' ').replace(/\d/g, ' ').replace(/[\s*]+/g, ' ').trim();
+        currentline[1] = currentline[1].replace(/[-!@#$%^&*(),.?":{}|<>\/]/g, ' ').replace(/\d/g, ' ').replace(/[\s*]+/g, ' ').trim();
         if (currentline[1].toString().length > +1) {
             dataArr.push(currentline);
         }
