@@ -1,9 +1,4 @@
-function getRandomInt(min, max) {
-    // использование Math.round() даст неравномерное распределение!
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function customDateRange(select) { // Формируем значение параметра временного диапазона
+function customDateRange(select) { // Формируем значение параметра временного диапазона для выборки AWQL
     var MILLIS_PER_DAY = 1000 * 60 * 60 * 24,
         now = new Date(),
         fromDate = new Date(now.getTime() - (config().customDaysInDateRange + config().customDateRangeShift) * MILLIS_PER_DAY),
@@ -34,4 +29,9 @@ function unique(arr) { // убираем повторы
     return arr.filter(function (a) {
         return a in tmp ? 0 : tmp[a] = 1;
     });
+}
+
+function getRandomInt(min, max) {
+    // использование Math.round() даст неравномерное распределение!
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
