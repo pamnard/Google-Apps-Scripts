@@ -39,7 +39,9 @@ function yandexParse() {
         "headers": {
             "Authorization": auth_str,
             "Accept-Language": "ru",
-            "processingMode": "auto"
+            "processingMode": "offline",
+            "skipReportHeader": "true",
+            "skipReportSummary": "true"
         },
         "method": "post",
         "contentType": "application/json; charset=utf-8",
@@ -50,7 +52,7 @@ function yandexParse() {
         Utilities.sleep(10000);
         var response = UrlFetchApp.fetch('https://api.direct.yandex.com/json/v5/reports', options),
             responseCode = response.getResponseCode();
-        Logger.log(response);
+        // Logger.log(response);
         if ((responseCode == 201) || (responseCode == 202)) {
             var response = UrlFetchApp.fetch('https://api.direct.yandex.com/json/v5/reports', options),
                 responseCode = response.getResponseCode();
