@@ -1,5 +1,5 @@
 function config() {
-    const CONFIG = {
+    return {
         customDaysInDateRange: 180,
         // Указываем количество дней для выборки
         // Если хотим использовать данные о конверсиях или доходности, то в качестве значения следует указывать число большее чем окно конверсии. 
@@ -14,5 +14,4 @@ function config() {
         // Перейдите по ссылке https://oauth.yandex.ru/authorize?response_type=token&client_id=ИДЕНТИФИКАТОР_ПРИЛОЖЕНИЯ
         // На открывшейся странице нажмите кнопку Разрешить.
     };
-    return CONFIG;
 }
